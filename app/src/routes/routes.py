@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, HTTPException, status, Depends
 from sqlalchemy.orm import Session
 
 import service.user_service as UserService
@@ -17,7 +17,7 @@ async def create_user(user : User, db: Session = Depends(get_db)):
     try:
         UserService.create_user(user, db)
     except ValueError as ve:
-        return {"error": str(ve)}
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))
 
     return {"message": "post successful"}
 
@@ -26,5 +26,5 @@ async def create_user(user : User, db: Session = Depends(get_db)):
 async def get_user(user_id: int, db: Session = Depends(get_db)):
     db_user = db.query(UserModel).filter(UserModel.id == user_id).first()
     if db_user is None:
-        return {"error": "User not found"}
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     return {"id": db_user.id, "username": db_user.username}
