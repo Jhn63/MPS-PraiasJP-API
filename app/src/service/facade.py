@@ -1,10 +1,11 @@
 import re
 from sqlalchemy.orm import Session
-from models.user_model import User as UserModel
+from modules.users.user_model import User as UserModel
 from models.estacao_model import EstacaoMonitoramento as EstacaoModel
-from schemas.user import User as UserSchema
+from modules.users.user import User as UserSchema
 from schemas.estacao import EstacaoMonitoramento as EstacaoSchema
 from exceptions.domain_exceptions import UsuarioInvalidoError 
+from modules.auth.auth_factory import AuthFactory
 
 password_pattern = re.compile(r"^(?=\S{8,128}$)(?=.*?\d)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[!@#$%^&*()-+=]).*$")
 
@@ -22,6 +23,10 @@ class UsuarioController:
         db.commit()
         db.refresh(db_user)
         return db_user
+    
+    def gerarTokenAcesso(self, user_id: int, auth_type: str) -> str:
+        strategy = AuthFactory.get_strategy(auth_type)
+        return strategy.gerar_chave(user_id)
 
     def count(self, db: Session) -> int:
         return db.query(UserModel).count()
@@ -61,8 +66,14 @@ class FacadeSingletonController:
     def cadastrarNovaEstacao(self, dados: EstacaoSchema, db: Session):
         return self.estacaoController.criarEstacao(dados, db)
 
-    def gerarAcessoUsuario(self, dados: UserSchema, db: Session):
-        return self.usuarioController.criarUsuario(dados, db)
+    def gerarAcessoUsuario(self, dados: UserSchema, db: Session, auth_type: str = "API_KEY"):
+        # 1. Cria o usuário
+        db_user = self.usuarioController.criarUsuario(dados, db)
+        
+        # 2. Gera a chave de acesso usando o padrão selecionado
+        token = self.usuarioController.gerarTokenAcesso(db_user.id, auth_type)
+        
+        return db_user, token
 
     def getQuantidadeTotalEntidades(self, db: Session) -> int:
         total_usuarios = self.usuarioController.count(db)

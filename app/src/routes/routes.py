@@ -1,10 +1,8 @@
-# app/src/routes/routes.py
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-
 from service.facade import FacadeSingletonController
-from schemas.user import User as UserSchema
-from models.user_model import User as UserModel
+from modules.users.user import User as UserSchema
+from modules.users.user_model import User as UserModel
 from database.db import get_db
 from exceptions.domain_exceptions import UsuarioInvalidoError
 
@@ -18,15 +16,22 @@ async def home():
     return {"message": "I'm alive message"}
 
 @router.post("/users/")
-async def create_user(user: UserSchema, db: Session = Depends(get_db)):
+async def create_user(user: UserSchema, auth_type: str = "API_KEY", db: Session = Depends(get_db)):
     try:
-        # A rota só conhece a Facade! Não chama o Controller ou Service diretamente.
-        user_criado = facade.gerarAcessoUsuario(user, db)
-        return {"message": "Utilizador criado com sucesso", "username": user_criado.username}
-    except UsuarioInvalidoError as erro:
-        # Levanta um erro HTTP 400 em vez de devolver um JSON normal com a chave "error"
+        # Devolve o usuário e o token
+        user_criado, token = facade.gerarAcessoUsuario(user, db, auth_type)
+        
+        return {
+            "message": "Usuário criado com sucesso", 
+            "username": user_criado.username,
+            "access_token": token,
+            "auth_type": auth_type
+        }
+    except ValueError as erro:
         raise HTTPException(status_code=400, detail=str(erro))
-
+    except UsuarioInvalidoError as erro:
+        raise HTTPException(status_code=400, detail=str(erro))
+    
 @router.get("/users/{user_id}")
 async def get_user(user_id: int, db: Session = Depends(get_db)):
     # Mais tarde podemos mover isto para a Facade também (ex: facade.buscarUsuario(user_id, db))
