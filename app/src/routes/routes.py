@@ -5,6 +5,7 @@ from modules.users.user import User as UserSchema
 from modules.users.user_model import User as UserModel
 from database.db import get_db
 from exceptions.domain_exceptions import UsuarioInvalidoError
+from middlewares.auth_chain import verificar_acesso
 
 router = APIRouter()
 
@@ -32,9 +33,8 @@ async def create_user(user: UserSchema, auth_type: str = "API_KEY", db: Session 
     except UsuarioInvalidoError as erro:
         raise HTTPException(status_code=400, detail=str(erro))
     
-@router.get("/users/{user_id}")
+@router.get("/{user_id}", dependencies=[Depends(verificar_acesso)])
 async def get_user(user_id: int, db: Session = Depends(get_db)):
-    # Mais tarde podemos mover isto para a Facade também (ex: facade.buscarUsuario(user_id, db))
     db_user = db.query(UserModel).filter(UserModel.id == user_id).first()
     if db_user is None:
         raise HTTPException(status_code=404, detail="Utilizador não encontrado")
