@@ -133,7 +133,8 @@ def setup_error_logger(
     min_console_level: LogLevel = LogLevel.WARNING,
     max_bytes: int = 10 * 1024 * 1024,
     backup_count: int = 5,
-    register_handlers: bool = True
+    register_handlers: bool = True,
+    skip_middleware_registration: bool = False
 ) -> None:
     """
     Configura o error logger na aplicação FastAPI
@@ -149,6 +150,7 @@ def setup_error_logger(
         max_bytes: Tamanho máximo do arquivo antes de rotacionar
         backup_count: Número de backups a manter
         register_handlers: Registra exception handlers automáticos
+        skip_middleware_registration: Pula registro de middleware (útil se já foi registrado)
     """
     
     # Adiciona observer de arquivo
@@ -192,8 +194,9 @@ def setup_error_logger(
             general_exception_handler
         )
     
-    # Adiciona middleware
-    app.add_middleware(ErrorLoggerMiddleware)
+    # Adiciona middleware (pode ser pulado se já foi registrado)
+    if not skip_middleware_registration:
+        app.add_middleware(ErrorLoggerMiddleware)
     
     # Log de inicialização
     error_logger.info(

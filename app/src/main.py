@@ -6,25 +6,12 @@ from sqlalchemy.orm import Session
 from routes.routes import router
 from database.db import engine, SessionLocal, Base
 
-from modules.logger.logger_service import setup_error_logger, LogLevel
-from modules.logger.error_logger import error_logger
+from modules.logger.logger_service import setup_error_logger, ErrorLoggerMiddleware
+from modules.logger.error_logger import error_logger, LogLevel
 from modules.monitoring.scheduler import start_monitoring_loop
-
-from fastapi import FastAPI
-from contextlib import asynccontextmanager
-import asyncio
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Setup logger primeiro
-    setup_error_logger(
-        app,
-        log_file="logs/errors.log",
-        enable_console=True,
-        log_format="text",
-        min_file_level=LogLevel.ERROR,
-    )
-
     error_logger.info("Error logger initialized")
 
     # Criar banco com tratamento de erro
@@ -49,4 +36,19 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+# Register middleware BEFORE app starts (before lifespan)
+app.add_middleware(ErrorLoggerMiddleware)
+
+# Register exception handlers and other logger setup
+setup_error_logger(
+    app,
+    log_file="logs/errors.log",
+    enable_console=True,
+    log_format="text",
+    min_file_level=LogLevel.ERROR,
+    register_handlers=True,
+    skip_middleware_registration=True,  # Already added above
+)
+
 app.include_router(router)
+error_logger.info("Application startup complete")
