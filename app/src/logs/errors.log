@@ -1,0 +1,1133 @@
+================================================================================
+[2026-04-07 12:39:51] ERROR
+Message: Unhandled exception
+Context: {
+  "path": "/docs",
+  "method": "GET",
+  "client_host": "127.0.0.1"
+}
+Exception: TypeError
+Details: ErrorLoggerMiddleware.__call__() missing 1 required positional argument: 'send'
+Traceback:
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+    | TypeError: ErrorLoggerMiddleware.__call__() missing 1 required positional argument: 'send'
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: ErrorLoggerMiddleware.__call__() missing 1 required positional argument: 'send'
+
+================================================================================
+================================================================================
+[2026-04-07 12:39:52] ERROR
+Message: Unhandled exception
+Context: {
+  "path": "/favicon.ico",
+  "method": "GET",
+  "client_host": "127.0.0.1"
+}
+Exception: TypeError
+Details: ErrorLoggerMiddleware.__call__() missing 1 required positional argument: 'send'
+Traceback:
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_utils.py", line 81, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 783, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+    | TypeError: ErrorLoggerMiddleware.__call__() missing 1 required positional argument: 'send'
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+TypeError: ErrorLoggerMiddleware.__call__() missing 1 required positional argument: 'send'
+
+================================================================================
+================================================================================
+[2026-04-07 12:43:01] ERROR
+Message: Erro na operação matemática
+Context: {
+  "operacao": "divisao"
+}
+Exception: ZeroDivisionError
+Details: division by zero
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 42, in login_user
+    resultado = 10 / 0
+                ~~~^~~
+ZeroDivisionError: division by zero
+
+================================================================================
+================================================================================
+[2026-04-07 17:38:46] ERROR
+Message: Unhandled exception in request
+Context: {
+  "path": "/users/",
+  "method": "POST",
+  "client_host": "127.0.0.1"
+}
+Exception: OperationalError
+Details: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('johnMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table User has no column named password
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\modules\logger\logger_service.py", line 48, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 314, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 25, in register_user
+    user_criado, token = facade.gerarAcessoUsuario(user, db, auth_type)
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 71, in gerarAcessoUsuario
+    db_user = self.usuarioController.criarUsuario(dados, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 23, in criarUsuario
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1311, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1286, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4331, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4466, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4427, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('johnMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+================================================================================
+================================================================================
+[2026-04-07 17:38:47] ERROR
+Message: Unhandled exception
+Context: {
+  "path": "/users/",
+  "method": "POST",
+  "client_host": "127.0.0.1"
+}
+Exception: OperationalError
+Details: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('johnMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table User has no column named password
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\modules\logger\logger_service.py", line 48, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 314, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 25, in register_user
+    user_criado, token = facade.gerarAcessoUsuario(user, db, auth_type)
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 71, in gerarAcessoUsuario
+    db_user = self.usuarioController.criarUsuario(dados, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 23, in criarUsuario
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1311, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1286, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4331, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4466, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4427, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('johnMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+================================================================================
+================================================================================
+[2026-04-07 17:42:15] ERROR
+Message: Failed to create user
+Context: {
+  "username": "jhonMaconha"
+}
+Exception: OperationalError
+Details: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('jhonMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table User has no column named password
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 26, in criarUsuario
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1311, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1286, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4331, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4466, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4427, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('jhonMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+================================================================================
+================================================================================
+[2026-04-07 17:42:15] ERROR
+Message: Failed to generate user access
+Context: {
+  "username": "jhonMaconha",
+  "auth_type": "API_KEY"
+}
+Exception: OperationalError
+Details: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('jhonMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table User has no column named password
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 118, in gerarAcessoUsuario
+    db_user = self.usuarioController.criarUsuario(dados, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 26, in criarUsuario
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1311, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1286, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4331, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4466, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4427, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('jhonMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+================================================================================
+================================================================================
+[2026-04-07 17:42:15] ERROR
+Message: Unhandled exception in request
+Context: {
+  "path": "/users/",
+  "method": "POST",
+  "client_host": "127.0.0.1"
+}
+Exception: OperationalError
+Details: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('jhonMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table User has no column named password
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\modules\logger\logger_service.py", line 48, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 314, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 25, in register_user
+    user_criado, token = facade.gerarAcessoUsuario(user, db, auth_type)
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 118, in gerarAcessoUsuario
+    db_user = self.usuarioController.criarUsuario(dados, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 26, in criarUsuario
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1311, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1286, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4331, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4466, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4427, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('jhonMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+================================================================================
+================================================================================
+[2026-04-07 17:42:15] ERROR
+Message: Unhandled exception
+Context: {
+  "path": "/users/",
+  "method": "POST",
+  "client_host": "127.0.0.1"
+}
+Exception: OperationalError
+Details: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('jhonMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table User has no column named password
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\modules\logger\logger_service.py", line 48, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 121, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 314, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 25, in register_user
+    user_criado, token = facade.gerarAcessoUsuario(user, db, auth_type)
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 118, in gerarAcessoUsuario
+    db_user = self.usuarioController.criarUsuario(dados, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 26, in criarUsuario
+    db.commit()
+    ~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "<string>", line 2, in commit
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1311, in commit
+    self._prepare_impl()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1286, in _prepare_impl
+    self.session.flush()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4331, in flush
+    self._flush(objects)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4466, in _flush
+    with util.safe_reraise():
+         ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4427, in _flush
+    flush_context.execute()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.mapper,
+        ^^^^^^^^^^^^
+        uow.states_for_mapper_hierarchy(self.mapper, False, False),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        uow,
+        ^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        base_mapper,
+        ^^^^^^^^^^^^
+    ...<3 lines>...
+        insert,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+        statement,
+        params,
+        execution_options=execution_options,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table User has no column named password
+[SQL: INSERT INTO "User" (username, password) VALUES (?, ?)]
+[parameters: ('jhonMaconha', '$maconhaBoa123')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+================================================================================
