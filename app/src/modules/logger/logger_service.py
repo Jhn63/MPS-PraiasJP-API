@@ -7,6 +7,7 @@ from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.middleware.base import BaseHTTPMiddleware
 from typing import Callable, Optional
 import time
 from .error_logger import (
@@ -16,38 +17,27 @@ from .error_logger import (
 )
 
 
-class ErrorLoggerMiddleware:
+class ErrorLoggerMiddleware(BaseHTTPMiddleware):
     """
     Middleware para capturar e logar todas as exceptions
     """
     
-    def __init__(self, app: FastAPI):
-        self.app = app
-    
-    async def __call__(self, scope, receive, send):
-        if scope["type"] != "http":
-            await self.app(scope, receive, send)
-            return
-        
-        request = Request(scope, receive)
-        
-        async def send_wrapper(message):
-            # Intercepta responses para logar erros HTTP
-            if message["type"] == "http.response.start":
-                status_code = message["status"]
-                if status_code >= 400:
-                    error_logger.warning(
-                        f"HTTP {status_code} response",
-                        path=request.url.path,
-                        method=request.method,
-                        status_code=status_code
-                    )
-            await send(message)
-        
+    async def dispatch(self, request: Request, call_next):
         try:
-            await self.app(scope, receive, send_wrapper)
+            response = await call_next(request)
+            
+            # Log HTTP error responses
+            if response.status_code >= 400:
+                error_logger.warning(
+                    f"HTTP {response.status_code} response",
+                    path=request.url.path,
+                    method=request.method,
+                    status_code=response.status_code
+                )
+            
+            return response
         except Exception as exc:
-            # Loga a exception
+            # Log unhandled exceptions
             error_logger.log_exception(
                 exc,
                 message="Unhandled exception in request",

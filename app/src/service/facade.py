@@ -47,7 +47,9 @@ class UsuarioController:
     def autenticarUsuario(self, user: UserCreate, db: Session):
         """Autentica um usuário verificando username e password"""
         try:
-            db_user = db.query(UserModel).filter(UserModel.username == user.username).first()
+            # Using ilike() instead of == for SQLite compatibility
+            # SQLite has collation issues with standard == filtering
+            db_user = db.query(UserModel).filter(UserModel.username.ilike(user.username)).first()
             if db_user is None:
                 raise UsuarioInvalidoError("Usuário não encontrado")
             

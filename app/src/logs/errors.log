@@ -1131,3 +1131,235 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) table User has no co
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
 
 ================================================================================
+================================================================================
+[2026-04-07 19:13:48] ERROR
+Message: Login failed
+Context: {
+  "username": "jhonMaconha",
+  "auth_type": "API_KEY"
+}
+Exception: UsuarioInvalidoError
+Details: Usuário não encontrado
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 172, in realizarLogin
+    db_user = self.usuarioController.autenticarUsuario(credenciais, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 52, in autenticarUsuario
+    raise UsuarioInvalidoError("Usuário não encontrado")
+exceptions.domain_exceptions.UsuarioInvalidoError: Usuário não encontrado
+
+================================================================================
+================================================================================
+[2026-04-07 19:13:48] ERROR
+Message: Database session error
+Exception: HTTPException
+Details: 400: Usuário não encontrado
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 57, in login_user
+    user_autenticado, token = facade.realizarLogin(user, db, auth_type)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 172, in realizarLogin
+    db_user = self.usuarioController.autenticarUsuario(credenciais, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 52, in autenticarUsuario
+    raise UsuarioInvalidoError("Usuário não encontrado")
+exceptions.domain_exceptions.UsuarioInvalidoError: Usuário não encontrado
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\database\db.py", line 16, in get_db
+    yield db
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\concurrency.py", line 29, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 314, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 83, in login_user
+    raise HTTPException(status_code=400, detail=str(erro))
+fastapi.exceptions.HTTPException: 400: Usuário não encontrado
+
+================================================================================
+================================================================================
+[2026-04-07 19:20:16] ERROR
+Message: Login failed
+Context: {
+  "username": "jhonMaconha",
+  "auth_type": "API_KEY"
+}
+Exception: UsuarioInvalidoError
+Details: Usuário não encontrado
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 172, in realizarLogin
+    db_user = self.usuarioController.autenticarUsuario(credenciais, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 52, in autenticarUsuario
+    raise UsuarioInvalidoError("Usuário não encontrado")
+exceptions.domain_exceptions.UsuarioInvalidoError: Usuário não encontrado
+
+================================================================================
+================================================================================
+[2026-04-07 19:20:16] ERROR
+Message: Database session error
+Exception: HTTPException
+Details: 400: Usuário não encontrado
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 57, in login_user
+    user_autenticado, token = facade.realizarLogin(user, db, auth_type)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 172, in realizarLogin
+    db_user = self.usuarioController.autenticarUsuario(credenciais, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 52, in autenticarUsuario
+    raise UsuarioInvalidoError("Usuário não encontrado")
+exceptions.domain_exceptions.UsuarioInvalidoError: Usuário não encontrado
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\database\db.py", line 16, in get_db
+    yield db
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\concurrency.py", line 29, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 314, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 83, in login_user
+    raise HTTPException(status_code=400, detail=str(erro))
+fastapi.exceptions.HTTPException: 400: Usuário não encontrado
+
+================================================================================
+================================================================================
+[2026-04-07 19:21:21] ERROR
+Message: Login failed
+Context: {
+  "username": "jhonMaconha",
+  "auth_type": "API_KEY"
+}
+Exception: UsuarioInvalidoError
+Details: Usuário não encontrado
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 172, in realizarLogin
+    db_user = self.usuarioController.autenticarUsuario(credenciais, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 52, in autenticarUsuario
+    raise UsuarioInvalidoError("Usuário não encontrado")
+exceptions.domain_exceptions.UsuarioInvalidoError: Usuário não encontrado
+
+================================================================================
+================================================================================
+[2026-04-07 19:21:21] ERROR
+Message: Database session error
+Exception: HTTPException
+Details: 400: Usuário não encontrado
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 57, in login_user
+    user_autenticado, token = facade.realizarLogin(user, db, auth_type)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 172, in realizarLogin
+    db_user = self.usuarioController.autenticarUsuario(credenciais, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 52, in autenticarUsuario
+    raise UsuarioInvalidoError("Usuário não encontrado")
+exceptions.domain_exceptions.UsuarioInvalidoError: Usuário não encontrado
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\database\db.py", line 16, in get_db
+    yield db
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\concurrency.py", line 29, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 314, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 83, in login_user
+    raise HTTPException(status_code=400, detail=str(erro))
+fastapi.exceptions.HTTPException: 400: Usuário não encontrado
+
+================================================================================
+================================================================================
+[2026-04-07 19:22:22] ERROR
+Message: Login failed
+Context: {
+  "username": "jhonMaconha",
+  "auth_type": "API_KEY"
+}
+Exception: UsuarioInvalidoError
+Details: Usuário não encontrado
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 172, in realizarLogin
+    db_user = self.usuarioController.autenticarUsuario(credenciais, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 52, in autenticarUsuario
+    raise UsuarioInvalidoError("Usuário não encontrado")
+exceptions.domain_exceptions.UsuarioInvalidoError: Usuário não encontrado
+
+================================================================================
+================================================================================
+[2026-04-07 19:22:22] ERROR
+Message: Database session error
+Exception: HTTPException
+Details: 400: Usuário não encontrado
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 57, in login_user
+    user_autenticado, token = facade.realizarLogin(user, db, auth_type)
+                              ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 172, in realizarLogin
+    db_user = self.usuarioController.autenticarUsuario(credenciais, db)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\service\facade.py", line 52, in autenticarUsuario
+    raise UsuarioInvalidoError("Usuário não encontrado")
+exceptions.domain_exceptions.UsuarioInvalidoError: Usuário não encontrado
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\database\db.py", line 16, in get_db
+    yield db
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\concurrency.py", line 29, in contextmanager_in_threadpool
+    yield await run_in_threadpool(cm.__enter__)
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 107, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 426, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\Periodo_10\Metodos de Projeto de Software\mps-praiasjp\venv\Lib\site-packages\fastapi\routing.py", line 314, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jhnvt\Dropbox\backups\UFPB\periodo_10\Metodos de projeto de software\mps-praiasjp\app\src\routes\routes.py", line 83, in login_user
+    raise HTTPException(status_code=400, detail=str(erro))
+fastapi.exceptions.HTTPException: 400: Usuário não encontrado
+
+================================================================================
