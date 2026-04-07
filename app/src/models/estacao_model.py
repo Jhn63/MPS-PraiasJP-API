@@ -10,3 +10,4 @@ class EstacaoMonitoramento(Base):
     localizacao = Column(String)
     dataInstall = Column(DateTime, default=datetime.datetime.utcnow)
     status = Column(String)
+    nivel_mare = Column(String, nullable=True)
