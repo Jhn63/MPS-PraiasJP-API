@@ -1,3 +1,4 @@
 venv/
 app/src/database/base.db
 __pycache__/
+app/src/logs/

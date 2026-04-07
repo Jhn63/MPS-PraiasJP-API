@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from fastapi import HTTPException, Header
 from modules.auth.auth_factory import AuthFactory
 from middlewares.permissoes_composite import ComponentePermissao, PermissaoSimples
+from modules.logger.error_logger import error_logger
 
 class Handler(ABC):
     """Classe base para os elos da cadeia."""
@@ -23,12 +24,15 @@ class ValidacaoTokenHandler(Handler):
     def manipular(self, request_data: dict) -> bool:
         token = request_data.get("token")
         if not token:
+            error_logger.warning("Token validation failed", reason="Token not provided")
             raise HTTPException(status_code=401, detail="Acesso Negado: Token não fornecido.")
         
         strategy = AuthFactory.get_strategy("API_KEY")
         if not strategy.validar_chave(token):
+            error_logger.warning("Token validation failed", reason="Invalid token", token=token[:10] + "...")
             raise HTTPException(status_code=401, detail="Acesso Negado: Token inválido.")
         
+        error_logger.info("Token validated successfully", token=token[:10] + "...")
         return super().manipular(request_data)
 
 class AutorizacaoHandler(Handler):
@@ -40,8 +44,17 @@ class AutorizacaoHandler(Handler):
 
     def manipular(self, request_data: dict) -> bool:
         if not self.cargo_usuario.tem_permissao(self.permissao_necessaria):
+            error_logger.warning(
+                "Authorization failed",
+                required_permission=self.permissao_necessaria,
+                reason="Insufficient privileges"
+            )
             raise HTTPException(status_code=403, detail=f"Acesso Negado: Faltam privilégios para '{self.permissao_necessaria}'.")
         
+        error_logger.info(
+            "Authorization granted",
+            required_permission=self.permissao_necessaria
+        )
         return super().manipular(request_data)
 
 def verificar_acesso(x_token: str = Header(default=None)):
@@ -55,4 +68,8 @@ def verificar_acesso(x_token: str = Header(default=None)):
     etapa_1_token.set_proximo(etapa_2_permissao)
     
     # 2. Executa a cadeia
-    etapa_1_token.manipular({"token": x_token})
+    error_logger.info(
+        "Access verification initiated",
+        has_token=x_token is not None
+    )
+    return etapa_1_token.manipular({"token": x_token})
