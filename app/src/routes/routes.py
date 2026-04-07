@@ -32,6 +32,7 @@ async def create_user(user: UserSchema, auth_type: str = "API_KEY", db: Session 
         raise HTTPException(status_code=400, detail=str(erro))
     except UsuarioInvalidoError as erro:
         raise HTTPException(status_code=400, detail=str(erro))
+
     
 @router.get("/{user_id}", dependencies=[Depends(verificar_acesso)])
 async def get_user(user_id: int, db: Session = Depends(get_db)):

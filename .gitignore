@@ -1,2 +1,3 @@
 venv/
 app/src/database/base.db
+__pycache__/
