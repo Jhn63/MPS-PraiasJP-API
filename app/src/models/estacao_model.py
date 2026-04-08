@@ -11,3 +11,4 @@ class EstacaoMonitoramento(Base):
     dataInstall = Column(DateTime, default=datetime.datetime.utcnow)
     status = Column(String)
     nivel_mare = Column(String, nullable=True)
+    baneabilidade = Column(String, nullable=True)

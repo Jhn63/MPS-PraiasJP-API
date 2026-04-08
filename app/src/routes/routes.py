@@ -104,7 +104,8 @@ async def get_estacao_by_nome(nome: str, db: Session = Depends(get_db), _: str =
                 "localizacao": estacao.localizacao,
                 "status": estacao.status,
                 "dataInstall": estacao.dataInstall,
-                "nivel_mare": estacao.nivel_mare
+                "nivel_mare": estacao.nivel_mare,
+                "baneabilidade": estacao.baneabilidade
             }
         }
     except ValueError as erro:
@@ -141,7 +142,8 @@ async def get_estacao_by_localizacao(localizacao: str, db: Session = Depends(get
                 "localizacao": estacao.localizacao,
                 "status": estacao.status,
                 "dataInstall": estacao.dataInstall,
-                "nivel_mare": estacao.nivel_mare
+                "nivel_mare": estacao.nivel_mare,
+                "baneabilidade": estacao.baneabilidade
             }
         }
     except ValueError as erro:
@@ -178,7 +180,8 @@ async def list_estacoes_by_status(status: str, db: Session = Depends(get_db), _:
                 "localizacao": estacao.localizacao,
                 "status": estacao.status,
                 "dataInstall": estacao.dataInstall,
-                "nivel_mare": estacao.nivel_mare
+                "nivel_mare": estacao.nivel_mare,
+                "baneabilidade": estacao.baneabilidade
             }
             for estacao in estacoes
         ]

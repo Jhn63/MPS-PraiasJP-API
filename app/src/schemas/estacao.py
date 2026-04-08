@@ -8,3 +8,5 @@ class EstacaoMonitoramento(BaseModel):
     localizacao: str
     dataInstall: Optional[datetime] = None
     status: str
+    nivel_mare: Optional[str] = None
+    baneabilidade: Optional[str] = None
