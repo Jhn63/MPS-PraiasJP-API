@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 
 from routes.routes import router
 from database.db import engine, SessionLocal, Base
+from database.migrations import run_alembic_migrations
 
 from modules.logger.logger_service import setup_error_logger, ErrorLoggerMiddleware
 from modules.logger.error_logger import error_logger, LogLevel
@@ -22,6 +23,16 @@ async def lifespan(app: FastAPI):
         error_logger.log_exception(
             exc,
             message="Failed to create database tables"
+        )
+        raise
+    
+    # Run Alembic migrations
+    try:
+        run_alembic_migrations()
+    except Exception as exc:
+        error_logger.log_exception(
+            exc,
+            message="Failed to run database migrations"
         )
         raise
 
