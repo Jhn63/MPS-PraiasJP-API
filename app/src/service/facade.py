@@ -107,6 +107,68 @@ class EstacaoController:
             )
             raise
 
+    def obterPorNome(self, nome: str, db: Session):
+        """Obtém estação por nome usando case-insensitive search"""
+        try:
+            estacao = db.query(EstacaoModel).filter(EstacaoModel.nome.ilike(nome)).first()
+            if estacao is None:
+                raise ValueError(f"Estação com nome '{nome}' não encontrada")
+            error_logger.info(
+                "Estação retrieved by nome",
+                nome=nome,
+                estacao_id=estacao.id
+            )
+            return estacao
+        except ValueError:
+            raise
+        except Exception as exc:
+            error_logger.log_exception(
+                exc,
+                message="Failed to retrieve estação by nome",
+                nome=nome
+            )
+            raise
+
+    def obterPorLocalizacao(self, localizacao: str, db: Session):
+        """Obtém estação por localização usando case-insensitive search"""
+        try:
+            estacao = db.query(EstacaoModel).filter(EstacaoModel.localizacao.ilike(localizacao)).first()
+            if estacao is None:
+                raise ValueError(f"Estação com localização '{localizacao}' não encontrada")
+            error_logger.info(
+                "Estação retrieved by localizacao",
+                localizacao=localizacao,
+                estacao_id=estacao.id
+            )
+            return estacao
+        except ValueError:
+            raise
+        except Exception as exc:
+            error_logger.log_exception(
+                exc,
+                message="Failed to retrieve estação by localizacao",
+                localizacao=localizacao
+            )
+            raise
+
+    def listarPorStatus(self, status: str, db: Session):
+        """Lista todas as estações com um determinado status"""
+        try:
+            estacoes = db.query(EstacaoModel).filter(EstacaoModel.status.ilike(status)).all()
+            error_logger.info(
+                "Estações retrieved by status",
+                status=status,
+                total=len(estacoes)
+            )
+            return estacoes
+        except Exception as exc:
+            error_logger.log_exception(
+                exc,
+                message="Failed to retrieve estações by status",
+                status=status
+            )
+            raise
+
     def count(self, db: Session) -> int:
         return db.query(EstacaoModel).count()
 
@@ -208,5 +270,60 @@ class FacadeSingletonController:
             error_logger.log_exception(
                 exc,
                 message="Failed to count total entidades"
+            )
+            raise
+
+    # --- Métodos de Busca para Estações ---
+    def obterEstacaoPorNome(self, nome: str, db: Session):
+        """Obtém uma estação por nome via facade"""
+        try:
+            estacao = self.estacaoController.obterPorNome(nome, db)
+            error_logger.info(
+                "Estação retrieved by nome via facade",
+                nome=nome,
+                estacao_id=estacao.id
+            )
+            return estacao
+        except Exception as exc:
+            error_logger.log_exception(
+                exc,
+                message="Failed to retrieve estação by nome via facade",
+                nome=nome
+            )
+            raise
+
+    def obterEstacaoPorLocalizacao(self, localizacao: str, db: Session):
+        """Obtém uma estação por localização via facade"""
+        try:
+            estacao = self.estacaoController.obterPorLocalizacao(localizacao, db)
+            error_logger.info(
+                "Estação retrieved by localizacao via facade",
+                localizacao=localizacao,
+                estacao_id=estacao.id
+            )
+            return estacao
+        except Exception as exc:
+            error_logger.log_exception(
+                exc,
+                message="Failed to retrieve estação by localizacao via facade",
+                localizacao=localizacao
+            )
+            raise
+
+    def listarEstacoesPorStatus(self, status: str, db: Session):
+        """Lista estações por status via facade"""
+        try:
+            estacoes = self.estacaoController.listarPorStatus(status, db)
+            error_logger.info(
+                "Estações listed by status via facade",
+                status=status,
+                total=len(estacoes)
+            )
+            return estacoes
+        except Exception as exc:
+            error_logger.log_exception(
+                exc,
+                message="Failed to list estações by status via facade",
+                status=status
             )
             raise
