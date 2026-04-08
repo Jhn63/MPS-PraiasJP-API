@@ -169,6 +169,24 @@ class EstacaoController:
             )
             raise
 
+    def listarPorBaneabilidade(self, baneabilidade: str, db: Session):
+        """Lista todas as estações com um determinado status de baneabilidade"""
+        try:
+            estacoes = db.query(EstacaoModel).filter(EstacaoModel.baneabilidade.ilike(baneabilidade)).all()
+            error_logger.info(
+                "Estações retrieved by baneabilidade",
+                baneabilidade=baneabilidade,
+                total=len(estacoes)
+            )
+            return estacoes
+        except Exception as exc:
+            error_logger.log_exception(
+                exc,
+                message="Failed to retrieve estações by baneabilidade",
+                baneabilidade=baneabilidade
+            )
+            raise
+
     def count(self, db: Session) -> int:
         return db.query(EstacaoModel).count()
 
@@ -325,5 +343,23 @@ class FacadeSingletonController:
                 exc,
                 message="Failed to list estações by status via facade",
                 status=status
+            )
+            raise
+
+    def listarEstacoesPorBaneabilidade(self, baneabilidade: str, db: Session):
+        """Lista estações por baneabilidade via facade"""
+        try:
+            estacoes = self.estacaoController.listarPorBaneabilidade(baneabilidade, db)
+            error_logger.info(
+                "Estações listed by baneabilidade via facade",
+                baneabilidade=baneabilidade,
+                total=len(estacoes)
+            )
+            return estacoes
+        except Exception as exc:
+            error_logger.log_exception(
+                exc,
+                message="Failed to list estações by baneabilidade via facade",
+                baneabilidade=baneabilidade
             )
             raise

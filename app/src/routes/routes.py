@@ -198,3 +198,41 @@ async def list_estacoes_by_status(status: str, db: Session = Depends(get_db), _:
             status=status
         )
         raise HTTPException(status_code=500, detail="Erro ao listar estações")
+
+
+@router.get("/estacoes/baneabilidade/{baneabilidade}")
+async def list_estacoes_by_baneabilidade(baneabilidade: str, db: Session = Depends(get_db), _: str = Depends(verificar_acesso)):
+    try:
+        estacoes = facade.listarEstacoesPorBaneabilidade(baneabilidade, db)
+        
+        error_logger.info(
+            "Estações listed by baneabilidade endpoint",
+            baneabilidade=baneabilidade,
+            total=len(estacoes)
+        )
+        
+        estacoes_data = [
+            {
+                "id": estacao.id,
+                "nome": estacao.nome,
+                "localizacao": estacao.localizacao,
+                "status": estacao.status,
+                "dataInstall": estacao.dataInstall,
+                "nivel_mare": estacao.nivel_mare,
+                "baneabilidade": estacao.baneabilidade
+            }
+            for estacao in estacoes
+        ]
+        
+        return {
+            "message": f"Encontradas {len(estacoes)} estação(ões) com baneabilidade '{baneabilidade}'",
+            "total": len(estacoes),
+            "estacoes": estacoes_data
+        }
+    except Exception as erro:
+        error_logger.log_exception(
+            erro,
+            message="List estações by baneabilidade - Unexpected error",
+            baneabilidade=baneabilidade
+        )
+        raise HTTPException(status_code=500, detail="Erro ao listar estações")
