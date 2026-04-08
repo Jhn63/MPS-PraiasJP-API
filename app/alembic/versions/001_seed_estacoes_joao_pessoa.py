@@ -19,25 +19,25 @@ depends_on = None
 
 def upgrade() -> None:
     """Insert seed data for João Pessoa beaches."""
-    # Define the beaches of João Pessoa with their monitoring status
+    
     beaches = [
         {
-            'nome': 'Praia de Tambaú',
-            'localizacao': 'Tambaú, João Pessoa, PB',
+            'nome': 'Praia do Bessa',
+            'localizacao': 'Bessa, João Pessoa, PB',
             'status': 'ATUALIZADO',
             'baneabilidade': 'PROPRIO',
             'dataInstall': datetime.utcnow()
         },
         {
-            'nome': 'Praia do Bessa',
-            'localizacao': 'Bessa, João Pessoa, PB',
+            'nome': 'Praia de Manaíra',
+            'localizacao': 'Manaíra, João Pessoa, PB',
             'status': 'ATUALIZADO',
             'baneabilidade': 'IMPROPRIO',
             'dataInstall': datetime.utcnow()
         },
         {
-            'nome': 'Praia de Manaíra',
-            'localizacao': 'Manaíra, João Pessoa, PB',
+            'nome': 'Praia de Tambaú',
+            'localizacao': 'Tambaú, João Pessoa, PB',
             'status': 'ATUALIZADO',
             'baneabilidade': 'PROPRIO',
             'dataInstall': datetime.utcnow()
@@ -50,29 +50,35 @@ def upgrade() -> None:
             'dataInstall': datetime.utcnow()
         },
         {
-            'nome': 'Praia de Jaguaribe',
-            'localizacao': 'Jaguaribe, João Pessoa, PB',
+            'nome': 'Praia do Seixas',
+            'localizacao': 'Seixas, João Pessoa, PB',
             'status': 'ATUALIZADO',
             'baneabilidade': 'IMPROPRIO',
             'dataInstall': datetime.utcnow()
         },
         {
-            'nome': 'Praia de Intermares',
-            'localizacao': 'Intermares, João Pessoa, PB',
+            'nome': 'Praia da Penha',
+            'localizacao': 'Penha, João Pessoa, PB',
             'status': 'ATUALIZADO',
             'baneabilidade': 'PROPRIO',
             'dataInstall': datetime.utcnow()
         },
         {
-            'nome': 'Praia de Jacaré',
-            'localizacao': 'Jacaré, João Pessoa, PB',
+            'nome': 'Praia de Jacarapé',
+            'localizacao': 'Jacarapé, João Pessoa, PB',
             'status': 'ATUALIZADO',
             'baneabilidade': 'IMPROPRIO',
             'dataInstall': datetime.utcnow()
         },
+        {
+            'nome': 'Praia Barra de Gramame',
+            'localizacao': 'Barra de Gramame, João Pessoa, PB',
+            'status': 'ATUALIZADO',
+            'baneabilidade': 'PROPRIO',
+            'dataInstall': datetime.utcnow()
+        },
     ]
     
-    # Insert beaches into EstacaoMonitoramento table
     estacoes_table = sa.table(
         'EstacaoMonitoramento',
         sa.column('nome', sa.String),
@@ -90,7 +96,7 @@ def upgrade() -> None:
             status=beach['status'],
             baneabilidade=beach['baneabilidade'],
             dataInstall=beach['dataInstall'],
-            nivel_mare=None  # Will be populated by monitoring service
+            nivel_mare=None
         )
         op.execute(insert_stmt)
     
@@ -98,12 +104,9 @@ def upgrade() -> None:
 
 
 def downgrade() -> None:
-    """Remove seeded data (delete all beaches from João Pessoa)."""
+    """Remove seeded data."""
     op.execute(
         "DELETE FROM EstacaoMonitoramento "
-        "WHERE localizacao LIKE '%João Pessoa%' OR localizacao LIKE '%Tambaú%' OR "
-        "localizacao LIKE '%Bessa%' OR localizacao LIKE '%Manaíra%' OR "
-        "localizacao LIKE '%Cabo Branco%' OR localizacao LIKE '%Jaguaribe%' OR "
-        "localizacao LIKE '%Intermares%' OR localizacao LIKE '%Jacaré%'"
+        "WHERE localizacao LIKE '%João Pessoa%'"
     )
     print("✓ Removed seeded beaches from João Pessoa")

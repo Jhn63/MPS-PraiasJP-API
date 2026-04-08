@@ -1,10 +1,9 @@
 from contextlib import asynccontextmanager
 import asyncio
 from fastapi import FastAPI
-from sqlalchemy.orm import Session
 
 from routes.routes import router
-from database.db import engine, SessionLocal, Base
+from database.db import engine, Base
 from database.migrations import run_alembic_migrations
 
 from modules.logger.logger_service import setup_error_logger, ErrorLoggerMiddleware
@@ -12,7 +11,7 @@ from modules.logger.error_logger import error_logger, LogLevel
 from modules.monitoring.scheduler import start_monitoring_loop
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
+async def lifespan(_: FastAPI):
     error_logger.info("Error logger initialized")
 
     # Criar banco com tratamento de erro
