@@ -87,7 +87,7 @@ async def login_user(user: UserCreate, auth_type: str = "API_KEY", db: Session =
 # ==================== ESTAÇÃO ROUTES ====================
 
 @router.get("/estacoes/nome/{nome}")
-async def get_estacao_by_nome(nome: str, db: Session = Depends(get_db)):
+async def get_estacao_by_nome(nome: str, db: Session = Depends(get_db), _: str = Depends(verificar_acesso)):
     try:
         estacao = facade.obterEstacaoPorNome(nome, db)
         
@@ -124,7 +124,7 @@ async def get_estacao_by_nome(nome: str, db: Session = Depends(get_db)):
 
 
 @router.get("/estacoes/localizacao/{localizacao}")
-async def get_estacao_by_localizacao(localizacao: str, db: Session = Depends(get_db)):
+async def get_estacao_by_localizacao(localizacao: str, db: Session = Depends(get_db), _: str = Depends(verificar_acesso)):
     try:
         estacao = facade.obterEstacaoPorLocalizacao(localizacao, db)
         
@@ -161,7 +161,7 @@ async def get_estacao_by_localizacao(localizacao: str, db: Session = Depends(get
 
 
 @router.get("/estacoes/status/{status}")
-async def list_estacoes_by_status(status: str, db: Session = Depends(get_db)):
+async def list_estacoes_by_status(status: str, db: Session = Depends(get_db), _: str = Depends(verificar_acesso)):
     try:
         estacoes = facade.listarEstacoesPorStatus(status, db)
         
